@@ -3,7 +3,7 @@ const input = document.querySelector("#username");
 const profileContainer = document.querySelector(".profileContainer");
 const output = document.querySelector(".output");
 
-input.addEventListener("click", () => {
+input.addEventListener("focusin", () => {
   input.value = "";
 });
 githubButton.addEventListener("click", () => {
@@ -22,35 +22,21 @@ githubButton.addEventListener("click", () => {
     .then((data) => {
       const profile = document.createElement("h2");
       const bio = document.createElement("div");
-      bio.textContent = data.bio;
+      bio.textContent = "bio: " + data.bio;
       profile.textContent = data.login;
       const image = document.createElement("img");
       image.className = "profileImage";
       image.src = data.avatar_url;
       image.alt = "profile pic";
+      const followers = document.createElement("div");
+      const followings = document.createElement("div");
+      followings.textContent = "followings: " + data.followers;
+      followers.textContent = "followers: " + data.following;
       profileContainer.appendChild(image);
       profileContainer.appendChild(profile);
       profileContainer.appendChild(bio);
-      fetch(data.followers_url)
-        .then((response) => {
-          if (!response.ok) throw new Error(response.status);
-          return response.json();
-        })
-        .then((data) => {
-          const followers = document.createElement("div");
-          followers.textContent = "followers: " + data.length;
-          profileContainer.appendChild(followers);
-        });
-      fetch(data.followings_url)
-        .then((response) => {
-          if (!response.ok) throw new Error(response.status);
-          return response.json();
-        })
-        .then((data) => {
-          const followings = document.createElement("div");
-          followings.textContent = "followings: " + data.length;
-          profileContainer.appendChild(followers);
-        });
+      profileContainer.appendChild(followings);
+      profileContainer.appendChild(followers);
     })
     .catch((error) => {
       console.log(error);
