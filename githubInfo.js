@@ -22,9 +22,9 @@ githubButton.addEventListener("click", () => {
     .then((data) => {
       const profile = document.createElement("h2");
       const bio = document.createElement("div");
+      const image = document.createElement("img");
       bio.textContent = "bio: " + data.bio;
       profile.textContent = data.login;
-      const image = document.createElement("img");
       image.className = "profileImage";
       image.src = data.avatar_url;
       image.alt = "profile pic";
@@ -37,6 +37,19 @@ githubButton.addEventListener("click", () => {
       profileContainer.appendChild(bio);
       profileContainer.appendChild(followings);
       profileContainer.appendChild(followers);
+      //repositories//
+      fetch(data.repos_url)
+        .then((response) => {
+          if (!response.ok) throw new Error(response.status);
+          return response.json();
+        })
+        .then((dataRepo) => {
+          console.log(dataRepo);
+          for (let repo of dataRepo) {
+            const followers = document.createElement("div");
+            console.log(repo);
+          }
+        });
     })
     .catch((error) => {
       console.log(error);
@@ -51,3 +64,6 @@ githubButton.addEventListener("click", () => {
       }, 5000);
     });
 });
+
+// repos
+//name of repo, the name of the owner and pic, desc, link, created at , update at
