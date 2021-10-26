@@ -3,4 +3,10 @@
   left: 25%;
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.buttonContainer {
+  margin-top: 2%;
 }
