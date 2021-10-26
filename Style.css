@@ -23,8 +23,9 @@
 }
 
 .submitButtons {
-  width: 36%;
+  width: 33%;
   font-size: 2.25vw;
+  border-radius: 10px;
 }
 
 .usernameInput {
@@ -32,4 +33,14 @@
   box-shadow: 4px 4px 10px grey;
   border-radius: 10px;
   height: 7.5vh;
+}
+
+.fa-twitter {
+  background: #3b5998;
+  color: white;
+}
+
+.fa-github {
+  background: #000000;
+  color: rgb(253, 253, 253);
 }
