@@ -29,10 +29,11 @@
 }
 
 .usernameInput {
-  border: 2px solid rgb(49, 109, 150);
   box-shadow: 4px 4px 10px grey;
-  border-radius: 10px;
   height: 7.5vh;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, #3d72b4, black) border-box;
+  border-radius: 10px;
+  border: 4px solid transparent;
 }
 
 .fa-twitter {
