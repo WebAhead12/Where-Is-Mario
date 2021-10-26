@@ -55,6 +55,19 @@ body {
   color: rgb(253, 253, 253);
 }
 
+.weatherContainer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 1%;
+  width: 25%;
+  height: 12.5%;
+
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px grey;
+}
+
 .resultsContainer {
   min-height: calc(75%);
   width: 100%;
