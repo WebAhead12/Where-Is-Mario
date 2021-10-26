@@ -1,14 +1,17 @@
 body {
   height: 100vh;
   margin: 0;
+  background-color: #5b6467;
+  background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
 }
 
 .container {
   width: 50%;
+  height: 25%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: auto;
+  margin: 0 25%;
   font-size: 3.5vw;
 }
 
@@ -31,13 +34,13 @@ body {
   width: 33%;
   font-size: 2.25vw;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .usernameInput {
   box-shadow: 4px 4px 10px grey;
   height: 7.5vh;
-  background: linear-gradient(#fff, #fff) padding-box,
-    linear-gradient(to right, #3d72b4, black) border-box;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, #414141, #000000) border-box;
   border-radius: 10px;
   border: 4px solid transparent;
 }
@@ -53,15 +56,13 @@ body {
 }
 
 .resultsContainer {
-  min-height: 200px;
-  /* height: 65%; */
+  min-height: calc(75%);
   width: 100%;
-  margin: auto;
-  border: 2px solid black;
-  background-color: grey;
+  margin: 0 0;
   display: flex;
   flex-wrap: wrap;
 }
+
 .profileContainer {
   width: 30%;
   height: 380px;
@@ -70,8 +71,7 @@ body {
 }
 
 .infoContainer {
-  min-width: 400px;
-  width: 60%;
+  min-width: 63%;
   height: 380px;
   margin: auto 1.5%;
   border: 2px solid red;
