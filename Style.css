@@ -84,6 +84,12 @@ body {
   border: 2px solid red;
 }
 
+.profileImage {
+  margin: 5%;
+  width: 15vw;
+  height: 15vw;
+}
+
 .infoContainer {
   min-width: 63%;
   height: 380px;

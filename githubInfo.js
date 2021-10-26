@@ -3,6 +3,8 @@ const input = document.querySelector("#username");
 const profileContainer = document.querySelector(".profileContainer");
 const output = document.querySelector(".output");
 
+const profileImage = document.querySelector(".profileImage");
+
 input.addEventListener("focusin", () => {
   input.value = "";
 });
