@@ -62,25 +62,26 @@ githubButton.addEventListener("click", () => {
       followings.textContent = "followings: " + data.followers;
       follow.appendChild(followings);
 
-      //repositories//
-      const repoHeading = document.createElement("h1");
-      repoHeading.innerHTML = "Repositories";
-      infoContainer.appendChild(repoHeading);
-
       fetch(data.repos_url)
         .then((response) => {
           if (!response.ok) throw new Error(response.status);
           return response.json();
         })
         .then((dataRepo) => {
+          //repositories//
+          const repoHeading = document.createElement("h1");
+          repoHeading.innerHTML = "Repositories";
+          repoHeading.style["text-decoration"] = "underline";
+          repoHeading.style["font-family"] = `"Gelasio", serif`;
+          infoContainer.appendChild(repoHeading);
           for (let repo of dataRepo) {
             let newRepo = repoClone.cloneNode("true");
             let child = newRepo.children;
             child[0].innerHTML = `<a href=${repo.html_url} target="_blank">${repo.name}</a>`; // hyper link for name of repo
             child[1].innerHTML = "Owner: ".bold() + repo.owner.login;
             child[2].innerHTML = "Description: ".bold() + repo.description;
-            child[3].innerHTML = "Updated at: ".bold() + repo.updated_at;
-            child[4].innerHTML = "Created at: ".bold() + repo.created_at;
+            child[3].innerHTML = "Updated at: ".bold() + repo.updated_at.split("T")[0];
+            child[4].innerHTML = "Created at: ".bold() + repo.created_at.split("T")[0];
             child[5].innerHTML = `<i class="fa fa-star"> ${repo.stargazers_count}</i>`;
             infoContainer.appendChild(newRepo);
           }
