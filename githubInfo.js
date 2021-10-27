@@ -1,22 +1,28 @@
-const githubButton = document.querySelector(".githubSubmit");
-const input = document.querySelector("#username");
+const inputText = document.querySelector("#username");
+const githubButton = document.querySelector(".submitButton");
 const profileContainer = document.querySelector(".profileContainer");
-const output = document.querySelector(".output");
-const profileImage = document.querySelector(".profileImage");
+const infoContainer = document.querySelector(".infoContainer");
 const repoClone = document.querySelector(".cloneRepo").cloneNode(true);
 document.querySelector(".cloneRepo").remove();
-let infoContainer = document.querySelector(".infoContainer");
 
-input.addEventListener("focusin", () => {
-  input.value = "";
+inputText.addEventListener("focusin", () => {
+  inputText.value = "";
 });
+
+inputText.addEventListener("keyup", function(event){
+  if(event.keyCode === 13){
+    event.preventDefault()
+    inputText.blur()
+    githubButton.click()
+  }
+})
+
 githubButton.addEventListener("click", () => {
   infoContainer.innerHTML = "";
   profileContainer.innerHTML = "";
   
-  infoContainer.appendChild(repoHeading);
-  const usernameInput = input.value;
-  input.value = "";
+  const usernameInput = inputText.value;
+  inputText.value = "";
   if (usernameInput == "") {
     profileContainer.innerHTML = "";
     return;
@@ -28,7 +34,7 @@ githubButton.addEventListener("click", () => {
     })
     .then((data) => {
       const profile = document.createElement("h2");
-      profile.textContent = data.login;
+      profile.innerHTML = `<a href=${data.html_url}>${data.login}</a>`;
       profileContainer.appendChild(profile);
 
       const bio = document.createElement("div");
@@ -58,7 +64,9 @@ githubButton.addEventListener("click", () => {
 
       //repositories//
       const repoHeading = document.createElement("h1");
-      repoHeading.innerHTML = "Repositories:";
+      repoHeading.innerHTML = "Repositories";
+      infoContainer.appendChild(repoHeading);
+
       fetch(data.repos_url)
         .then((response) => {
           if (!response.ok) throw new Error(response.status);
@@ -73,7 +81,7 @@ githubButton.addEventListener("click", () => {
             child[2].innerHTML = "Description: ".bold() + repo.description;
             child[3].innerHTML = "Updated at: ".bold() + repo.updated_at;
             child[4].innerHTML = "Created at: ".bold() + repo.created_at;
-            child[5].innerHTML = `<i class="fas fa-star"> ${repo.stargazers_count}</i>`;
+            child[5].innerHTML = `<i class="fa fa-star"> ${repo.stargazers_count}</i>`;
             infoContainer.appendChild(newRepo);
           }
         });
@@ -81,13 +89,13 @@ githubButton.addEventListener("click", () => {
     .catch((error) => {
       console.log(error);
       if (error.message === "404") {
-        input.value = `⚠️ Couldn't find "${usernameInput}"`;
+        inputText.value = `⚠️ Couldn't find "${usernameInput}"`;
       } else {
-        input.value = "⚠️ Something went wrong";
+        inputText.value = "⚠️ Something went wrong";
       }
-      let tempVal = input.value;
+      let tempVal = inputText.value;
       setTimeout(() => {
-        if (input.value == tempVal) input.value = "";
+        if (inputText.value == tempVal) inputText.value = "";
       }, 5000);
     });
 });
