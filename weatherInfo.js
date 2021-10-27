@@ -21,7 +21,7 @@ function updateWeather(){
       geoLon = String(pos.coords.longitude.toFixed(5));
       geoLat = String(pos.coords.latitude.toFixed(5));
   
-      let url = `http://api.weatherapi.com/v1/current.json?key=${api_key}&q=${geoLat},${geoLon}&aqi=no`;
+      let url = `https://api.weatherapi.com/v1/current.json?key=${api_key}&q=${geoLat},${geoLon}&aqi=no`;
       fetch(url)
         .then((response) => {
           if (!response.ok) throw new Error(response.status);
