@@ -13,8 +13,7 @@ input.addEventListener("focusin", () => {
 githubButton.addEventListener("click", () => {
   infoContainer.innerHTML = "";
   profileContainer.innerHTML = "";
-  const repoHeading = document.createElement("h1");
-  repoHeading.innerHTML = "Repositories:";
+  
   infoContainer.appendChild(repoHeading);
   const usernameInput = input.value;
   input.value = "";
@@ -58,6 +57,8 @@ githubButton.addEventListener("click", () => {
       follow.appendChild(followings);
 
       //repositories//
+      const repoHeading = document.createElement("h1");
+      repoHeading.innerHTML = "Repositories:";
       fetch(data.repos_url)
         .then((response) => {
           if (!response.ok) throw new Error(response.status);
