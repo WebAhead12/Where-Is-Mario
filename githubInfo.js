@@ -38,7 +38,8 @@ githubButton.addEventListener("click", () => {
       followers.textContent = "followers: " + data.following;
       image.className = "profileImage";
       bio.className = "bio";
-      bio.innerHTML ="<strong>bio: </strong>" + data.bio;
+      bio.innerHTML =`<strong>Bio</strong><div><p>${data.bio}</p></div>` ;
+
 
 
       profile.textContent = data.login;

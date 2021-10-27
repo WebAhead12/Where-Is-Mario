@@ -1,5 +1,5 @@
 body {
-  height: 100vh;
+  height: 95vh;
   margin: 0;
   background-color: #e5e4e2;
 
@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: 0 25%;
+  margin: 2.5% 25%;
   font-size: 3.5vw;
 }
 
@@ -20,6 +20,12 @@ body {
   text-align: center;
   margin: 5%, 25%;
   width: 50%;
+  font-family: "Gelasio", serif;
+  font-size: 1.5vw;
+}
+
+.usernameLabel {
+  font-size: 5vw;
 }
 
 .buttonContainer {
@@ -62,6 +68,7 @@ body {
   top: 0;
   margin: 1%;
   width: 20%;
+  min-height: 140px;
   height: 15%;
 
   border: 1px solid black;
@@ -105,30 +112,25 @@ body {
 }
 
 .resultsContainer {
-  min-height: calc(75%);
+  min-height: calc(50%);
   width: 100%;
-  margin: 0 0;
+  margin: 15% 0;
   display: flex;
   flex-wrap: wrap;
 }
 
 .profileContainer {
+  position: relative;
   width: 30%;
   height: 380px;
-  margin: auto 1.5%;
+  margin: 0 1.5%;
   border: 2px solid red;
 }
-
-/* .profileImage {
-  margin: 5%;
-  width: 15vw;
-  height: 15vw;
-} */
 
 .infoContainer {
   min-width: 63%;
   height: 380px;
-  margin: auto 1.5%;
+  margin: 0 1.5%;
   border: 2px solid red;
   overflow: auto;
   -ms-overflow-style: none; /* IE and Edge */
@@ -142,37 +144,61 @@ body {
 
 /* the github profile image */
 .profileImage {
-  margin: 1%;
-  width: 19vw;
-  height: 19vw;
+  position: absolute;
+  margin: 10px 10px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
   float: left;
 }
+
+.profileContainer h2 {
+  position: absolute;
+  font-family: "Gelasio", serif;
+  margin-top: 200px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
 /* followers and following ll github */
 .follow {
-  float: right;
-  padding-top: 30%;
-  padding-right: 5%;
+  position: absolute;
+  margin-top: 235px;
+  margin-left: 50%;
+  transform: translateX(-50%);
   font-weight: bold;
   font-family: "Gelasio", serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+.follow div {
+  margin: 0 10px;
 }
 
 /* the bio of the github */
 
 .bio {
-  margin-left: 10px;
   position: absolute;
-  padding-top: 24%;
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; */
   font-family: "Gelasio", serif;
+  width: 95%;
+  height: 80px;
+  margin-top: 280px;
+  margin-left: 2.5%;
 }
 
-h2 {
-  font-family: "Gelasio", serif;
-  margin-left: 10px;
-  position: absolute;
-  padding-top: 19%;
+.bio div {
+  width: 100%;
+  height: 95%;
+  margin-bottom: 5%;
+  overflow: auto;
+}
+
+.bio div p {
+  width: 100%;
+  overflow: auto;
 }
 
 .cloneRepo {
@@ -184,8 +210,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   padding: 10px;
-  font-family: "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   transition: transform 250ms;
   background-color: rgba(100, 148, 237, 0.514);
@@ -217,20 +242,20 @@ h2 {
   color: black;
 }
 
-.repoStar{
-
-    font-family: 'FontAwesome';
-    color: rgba(228, 228, 9, 0.911);
-  
-  }
+.repoStar {
+  font-family: "FontAwesome";
+  color: rgba(228, 228, 9, 0.911);
 }
 
-.fa-star{
+.fa-star {
   color: yellow;
-
 }
 
 @media screen and (max-width: 800px) {
+  .weatherContainer {
+    min-height: 120px;
+  }
+
   .weatherLocation {
     padding-left: 5%;
     width: 45%;
