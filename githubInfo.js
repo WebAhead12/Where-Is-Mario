@@ -2,14 +2,20 @@ const githubButton = document.querySelector(".githubSubmit");
 const input = document.querySelector("#username");
 const profileContainer = document.querySelector(".profileContainer");
 const output = document.querySelector(".output");
-
 const profileImage = document.querySelector(".profileImage");
+const repoClone = document.querySelector(".cloneRepo").cloneNode(true);
+document.querySelector(".cloneRepo").remove();
+let infoContainer = document.querySelector(".infoContainer");
 
 input.addEventListener("focusin", () => {
   input.value = "";
 });
 githubButton.addEventListener("click", () => {
+  infoContainer.innerHTML = "";
   profileContainer.innerHTML = "";
+  const repoHeading = document.createElement("h1");
+  repoHeading.innerHTML = "Repositories:";
+  infoContainer.appendChild(repoHeading);
   const usernameInput = input.value;
   input.value = "";
   if (usernameInput == "") {
@@ -53,9 +59,16 @@ githubButton.addEventListener("click", () => {
           return response.json();
         })
         .then((dataRepo) => {
-          console.log(dataRepo);
           for (let repo of dataRepo) {
-            console.log(repo);
+            let newRepo = repoClone.cloneNode("true");
+            let child = newRepo.children;
+            child[0].innerHTML = `<a href=${repo.html_url} target="_blank">${repo.name}</a>`; // hyper link for name of repo
+            child[1].innerHTML = "Owner: ".bold() + repo.owner.login;
+            child[2].innerHTML = "Description: ".bold() + repo.description;
+            child[3].innerHTML = "Updated at: ".bold() + repo.updated_at;
+            child[4].innerHTML = "Created at: ".bold() + repo.created_at;
+            child[5].innerHTML = `<i class="fas fa-star"> ${repo.stargazers_count}</i>`;
+            infoContainer.appendChild(newRepo);
           }
         });
     })

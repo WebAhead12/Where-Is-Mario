@@ -16,18 +16,17 @@ if (navigator.geolocation) {
         return response.json();
       })
       .then((weatherData) => {
-        console.log(weatherData);
-        const temperature = document.querySelector(".temperature");
+        const temperature = document.querySelector(".weatherTemperature");
         temperature.innerHTML =
           weatherData.current.temp_c + "<sup>&#176;</sup>";
 
-        const image = document.querySelector(".img");
+        const image = document.querySelector(".weatherImage");
         image.src = weatherData.current.condition.icon;
         image.alt = "";
-        const location = document.querySelector(".location");
+        const location = document.querySelector(".weatherLocation");
         location.textContent = weatherData.location.name;
 
-        const description = document.querySelector(".description");
+        const description = document.querySelector(".weatherDescription");
         description.textContent = weatherData.current.condition.text;
       });
   });
