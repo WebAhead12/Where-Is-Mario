@@ -29,29 +29,33 @@ githubButton.addEventListener("click", () => {
     })
     .then((data) => {
       const profile = document.createElement("h2");
+      profile.textContent = data.login;
+      profileContainer.appendChild(profile);
+
       const bio = document.createElement("div");
-      const image = document.createElement("img");
-      const followers = document.createElement("div");
-      const followings = document.createElement("div");
-      const follow = document.createElement("div");
-      followings.textContent = "followings: " + data.followers;
-      followers.textContent = "followers: " + data.following;
-      image.className = "profileImage";
       bio.className = "bio";
       bio.innerHTML =`<strong>Bio</strong><div><p>${data.bio}</p></div>` ;
+      profileContainer.appendChild(bio);
 
-
-
-      profile.textContent = data.login;
+      const image = document.createElement("img");
       image.src = data.avatar_url;
       image.alt = "profile pic";
-      follow.className="follow";
-      follow.appendChild(followers);
-      follow.appendChild(followings);
+      image.className = "profileImage";
       profileContainer.appendChild(image);
-      profileContainer.appendChild(profile);
-      profileContainer.appendChild(bio);
+
+
+      const follow = document.createElement("div");
+      follow.className="follow";
       profileContainer.appendChild(follow);
+
+
+      const followers = document.createElement("div");
+      followers.textContent = "followers: " + data.following;
+      follow.appendChild(followers);
+
+      const followings = document.createElement("div");
+      followings.textContent = "followings: " + data.followers;
+      follow.appendChild(followings);
 
       //repositories//
       fetch(data.repos_url)
