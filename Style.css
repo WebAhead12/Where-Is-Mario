@@ -106,11 +106,11 @@ body {
   border: 2px solid red;
 }
 
-.profileImage {
+/* .profileImage {
   margin: 5%;
   width: 15vw;
   height: 15vw;
-}
+} */
 
 .infoContainer {
   min-width: 63%;
@@ -121,15 +121,35 @@ body {
 }
 /* the github profile image */
 .profileImage {
-  margin: 5%;
+  margin: 1%;
   width: 19vw;
-  height: 20vw;
+  height: 19vw;
   border-radius: 50%;
-  margin-left: 15%;
+  float: left;
 }
 /* followers and following ll github */
 .follow {
+  float: right;
+  padding-top: 30%;
+  padding-right: 5%;
+  font-weight: bold;
+  font-family: "Gelasio", serif;
 }
+
 /* the bio of the github */
+
 .bio {
+  margin-left: 10px;
+  position: absolute;
+  padding-top: 24%;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; */
+  font-family: "Gelasio", serif;
+}
+
+h2 {
+  font-family: "Gelasio", serif;
+  margin-left: 10px;
+  position: absolute;
+  padding-top: 19%;
 }

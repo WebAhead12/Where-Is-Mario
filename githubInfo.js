@@ -32,10 +32,13 @@ githubButton.addEventListener("click", () => {
       followers.textContent = "followers: " + data.following;
       image.className = "profileImage";
       bio.className = "bio";
-      bio.textContent = "bio: " + data.bio;
+      bio.innerHTML ="<strong>bio: </strong>" + data.bio;
+
+
       profile.textContent = data.login;
       image.src = data.avatar_url;
       image.alt = "profile pic";
+      follow.className="follow";
       follow.appendChild(followers);
       follow.appendChild(followings);
       profileContainer.appendChild(image);
