@@ -119,11 +119,17 @@ body {
   border: 2px solid red;
   overflow: auto;
 }
-
+/* the github profile image */
 .profileImage {
   margin: 5%;
   width: 19vw;
   height: 20vw;
   border-radius: 50%;
   margin-left: 15%;
+}
+/* followers and following ll github */
+.follow {
+}
+/* the bio of the github */
+.bio {
 }

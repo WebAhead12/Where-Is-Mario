@@ -1,4 +1,3 @@
-
 let api_key = "21e90fff0e3a4567a31111147212610";
 
 let geoLon = "";
@@ -33,5 +32,3 @@ if (navigator.geolocation) {
       });
   });
 }
-
-

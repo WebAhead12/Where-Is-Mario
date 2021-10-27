@@ -25,20 +25,24 @@ githubButton.addEventListener("click", () => {
       const profile = document.createElement("h2");
       const bio = document.createElement("div");
       const image = document.createElement("img");
-      bio.textContent = "bio: " + data.bio;
-      profile.textContent = data.login;
-      image.className = "profileImage";
-      image.src = data.avatar_url;
-      image.alt = "profile pic";
       const followers = document.createElement("div");
       const followings = document.createElement("div");
+      const follow = document.createElement("div");
       followings.textContent = "followings: " + data.followers;
       followers.textContent = "followers: " + data.following;
+      image.className = "profileImage";
+      bio.className = "bio";
+      bio.textContent = "bio: " + data.bio;
+      profile.textContent = data.login;
+      image.src = data.avatar_url;
+      image.alt = "profile pic";
+      follow.appendChild(followers);
+      follow.appendChild(followings);
       profileContainer.appendChild(image);
       profileContainer.appendChild(profile);
       profileContainer.appendChild(bio);
-      profileContainer.appendChild(followings);
-      profileContainer.appendChild(followers);
+      profileContainer.appendChild(follow);
+
       //repositories//
       fetch(data.repos_url)
         .then((response) => {
@@ -48,7 +52,6 @@ githubButton.addEventListener("click", () => {
         .then((dataRepo) => {
           console.log(dataRepo);
           for (let repo of dataRepo) {
-            const followers = document.createElement("div");
             console.log(repo);
           }
         });
@@ -66,6 +69,3 @@ githubButton.addEventListener("click", () => {
       }, 5000);
     });
 });
-
-// repos
-//name of repo, the name of the owner and pic, desc, link, created at , update at
