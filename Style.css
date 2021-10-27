@@ -298,6 +298,7 @@ body {
 
   .weatherContainer {
     min-height: 120px;
+    cursor: pointer;
   }
 
   .weatherLocation {
