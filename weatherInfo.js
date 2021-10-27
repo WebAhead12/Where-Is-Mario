@@ -16,7 +16,6 @@ if (navigator.geolocation) {
         return response.json();
       })
       .then((weatherData) => {
-        console.log(weatherData);
         const temperature = document.querySelector(".temperature");
         temperature.innerHTML =
           weatherData.current.temp_c + "<sup>&#176;</sup>";

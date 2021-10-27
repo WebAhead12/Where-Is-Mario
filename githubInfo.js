@@ -2,8 +2,9 @@ const githubButton = document.querySelector(".githubSubmit");
 const input = document.querySelector("#username");
 const profileContainer = document.querySelector(".profileContainer");
 const output = document.querySelector(".output");
-
 const profileImage = document.querySelector(".profileImage");
+const repoClone = document.querySelector(".cloneRepo");
+let infoContainer = document.querySelector(".infoContainer");
 
 input.addEventListener("focusin", () => {
   input.value = "";
@@ -50,9 +51,17 @@ githubButton.addEventListener("click", () => {
           return response.json();
         })
         .then((dataRepo) => {
-          console.log(dataRepo);
           for (let repo of dataRepo) {
-            console.log(repo);
+            let newRepo = repoClone.cloneNode("true");
+            let child = newRepo.children;
+            child[0].innerHTML = `<a href=${repo.html_url}>${repo.name}</a>`; // hyper link for name of repo
+            child[1].innerHTML = repo.owner.login;
+            child[2].innerHTML = repo.description;
+            child[3].innerHTML = repo.updated_at;
+            child[4].innerHTML = repo.created_at;
+            child[5].innerHTML = repo.stargazers_count;
+            infoContainer.appendChild(newRepo);
+            console.log(newRepo);
           }
         });
     })
