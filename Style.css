@@ -2,6 +2,7 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #e5e4e2;
+
   /* background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%); */
 }
 
@@ -141,3 +142,59 @@ body {
 /* the bio of the github */
 .bio {
 }
+
+.cloneRepo {
+  width: 70%;
+  font-size: 20px;
+  margin-top: 15px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  font-family: "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: transform 250ms;
+  background-color: rgba(100, 148, 237, 0.514);
+}
+.cloneRepo:hover {
+  transform: translateX(10px);
+}
+.repoName {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.repoName a:link {
+  color: black;
+}
+
+/* visited link */
+.repoName a:visited {
+  color: black;
+}
+
+/* mouse over link */
+.repoName a:hover {
+  color: grey;
+}
+
+/* selected link */
+.repoName a:active {
+  color: black;
+}
+
+.repoStar{
+
+    font-family: 'FontAwesome';
+    color: rgba(228, 228, 9, 0.911);
+  
+  }
+}
+
+.fa-star{
+  color: yellow;
+
+}
+
