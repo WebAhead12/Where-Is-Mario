@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 let api_key = "21e90fff0e3a4567a31111147212610";
 
 let geoLon = "";
@@ -38,18 +38,4 @@ if (navigator.geolocation) {
   });
 }
 
-=======
-let apiToken = "a8ykGO2CJeFtE5WIC9CSqpYqb";
-let secretToken = "xTa6ncj2Xl7v58EZGCa0ARnLRHUvpJMOtnbY2TNJziDup44mC2";
-let bearerToken = "AAAAAAAAAAAAAAAAAAAAAD6PVAEAAAAAZZ0WC4mnKJtJ3tST%2BUDLYRXKcfI%3DwICB9BMtPHIgXGgKvPrBwU7AEpLOknsdDhhWsU2CCYB57jhdIA";
 
-// fetch("URL", {headers: {`Bearer ${bearerToken}`}})
-
-fetch(`https://cors-anywhere.herokuapp.com/https://api.twitter.com/2/users/by/username/Cristiano`,
-{headers: {"Authorization":`Bearer ${bearerToken}`}})
-          .then(response => {
-            if (!response.ok) throw new Error(response.status);
-            return response.json();
-          })
-          .then(console.log)
->>>>>>> Stashed changes
