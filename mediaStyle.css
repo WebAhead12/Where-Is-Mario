@@ -1,13 +1,10 @@
 @media screen and (max-width: 800px) {
   .usernameClass {
-    text-align: center;
-    width: 50%;
-    font-family: "Gelasio", serif;
-    font-size: 3vw;
+    font-size: 2vw;
   }
 
   .usernameLabel {
-    font-size: 4vw;
+    font-size: 3.5vw;
   }
 
   .submitButton {
