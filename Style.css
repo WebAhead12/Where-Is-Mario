@@ -17,6 +17,7 @@ body::-webkit-scrollbar {
   z-index: 0;
   position: absolute;
   left: 50%;
+  width: 100%;
   transform: translateX(-50%) translateY(-50%);
   top: 50%;
   opacity: 0.05;
