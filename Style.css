@@ -48,7 +48,7 @@ body div {
 
 .usernameLabel {
   z-index: inherit;
-  font-size: 4vw;
+  font-size: 3.5vw;
 }
 
 .buttonContainer {
@@ -66,6 +66,11 @@ body div {
   font-size: 2.25vw;
   border-radius: 10px;
   cursor: pointer;
+  transition: ease-in-out 600ms;
+}
+
+.submitButton:hover {
+  transform: scale(1.15);
 }
 
 .usernameInput {
@@ -90,7 +95,7 @@ body div {
   top: 0;
   margin: 1%;
   width: 20%;
-  min-height: 140px;
+  min-height: 250px;
   height: 15%;
 
   border: 1px solid black;
@@ -115,7 +120,7 @@ body div {
   z-index: inherit;
   padding-left: 5%;
   width: 45%;
-  font-size: 1.15vw;
+  font-size: 2.5vw;
 }
 
 .weatherImage {
@@ -131,7 +136,7 @@ body div {
   padding-left: 5%;
   padding-bottom: 5%;
   margin-top: auto;
-  font-size: 1.75vw;
+  font-size: 2.5vw;
 }
 
 .weatherDescription {
@@ -140,7 +145,7 @@ body div {
   margin-left: auto;
   padding-right: 5%;
   padding-bottom: 5%;
-  font-size: 1.5vw;
+  font-size: 2.5vw;
 }
 
 .resultsContainer {
@@ -368,7 +373,7 @@ body div {
   .weatherLocation {
     padding-left: 5%;
     width: 45%;
-    font-size: 3vw;
+    font-size: 3.25vw;
   }
 
   .weatherImage {
@@ -382,7 +387,7 @@ body div {
     padding-left: 5%;
     padding-bottom: 5%;
     margin-top: auto;
-    font-size: 3vw;
+    font-size: 3.25vw;
   }
 
   .weatherDescription {
@@ -390,7 +395,7 @@ body div {
     margin-left: auto;
     padding-right: 5%;
     padding-bottom: 5%;
-    font-size: 3vw;
+    font-size: 3.25vw;
   }
 
   .profileContainer {
