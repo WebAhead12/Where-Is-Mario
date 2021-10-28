@@ -1,7 +1,7 @@
 # Where-Is-Mario
 
-    Description: A website to find information about a github account like its:
-    following, followers, profile picture, bio, Repositories. also you can see the weather of the location you're currently in.
+-A website to find information about a github account info (following, followers, profile picture, bio, Repositories). <br>
+-shows the weather of the location you're currently in.
 
 # Work Distribution
 Github.js : Hala + help from Juan. <br>
