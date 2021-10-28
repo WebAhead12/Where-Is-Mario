@@ -100,9 +100,15 @@ body div {
   font-family: "Gelasio", serif;
   font-size: large;
   background-color: #4b9cd3;
+  transition: ease-in-out 600ms;
 
   display: flex;
   flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.weatherContainer:hover {
+  transform: scale(1.05);
 }
 
 .weatherLocation {
