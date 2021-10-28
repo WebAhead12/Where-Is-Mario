@@ -10,4 +10,4 @@ index.html: Juan, Hala and Eitab. <br>
 CSS: Juan, Hala and Eitab. <br>
 
 # Website
-[Website link](https://webahead12.github.io/Where-Is-Mario/) to go to check out our site.
+[https://webahead12.github.io/Where-Is-Mario/](https://webahead12.github.io/Where-Is-Mario/)
