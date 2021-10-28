@@ -9,18 +9,18 @@ inputText.addEventListener("focusin", () => {
   inputText.value = "";
 });
 
-inputText.addEventListener("keyup", function(event){
-  if(event.keyCode === 13){
-    event.preventDefault()
-    inputText.blur()
-    githubButton.click()
+inputText.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    inputText.blur();
+    githubButton.click();
   }
-})
+});
 
 githubButton.addEventListener("click", () => {
   infoContainer.innerHTML = "";
   profileContainer.innerHTML = "";
-  
+
   const usernameInput = inputText.value;
   inputText.value = "";
   if (usernameInput == "") {
@@ -39,7 +39,7 @@ githubButton.addEventListener("click", () => {
 
       const bio = document.createElement("div");
       bio.className = "bio";
-      bio.innerHTML =`<strong>Bio</strong><div><p>${data.bio}</p></div>` ;
+      bio.innerHTML = `<strong>Bio</strong><div><p>${data.bio}</p></div>`;
       profileContainer.appendChild(bio);
 
       const image = document.createElement("img");
@@ -48,18 +48,16 @@ githubButton.addEventListener("click", () => {
       image.className = "profileImage";
       profileContainer.appendChild(image);
 
-
       const follow = document.createElement("div");
-      follow.className="follow";
+      follow.className = "follow";
       profileContainer.appendChild(follow);
-
 
       const followers = document.createElement("div");
       followers.textContent = "followers: " + data.following;
       follow.appendChild(followers);
 
       const followings = document.createElement("div");
-      followings.textContent = "followings: " + data.followers;
+      followings.textContent = "following: " + data.followers;
       follow.appendChild(followings);
 
       fetch(data.repos_url)
@@ -80,8 +78,10 @@ githubButton.addEventListener("click", () => {
             child[0].innerHTML = `<a href=${repo.html_url} target="_blank">${repo.name}</a>`; // hyper link for name of repo
             child[1].innerHTML = "Owner: ".bold() + repo.owner.login;
             child[2].innerHTML = "Description: ".bold() + repo.description;
-            child[3].innerHTML = "Updated at: ".bold() + repo.updated_at.split("T")[0];
-            child[4].innerHTML = "Created at: ".bold() + repo.created_at.split("T")[0];
+            child[3].innerHTML =
+              "Updated at: ".bold() + repo.updated_at.split("T")[0];
+            child[4].innerHTML =
+              "Created at: ".bold() + repo.created_at.split("T")[0];
             child[5].innerHTML = `<i class="fa fa-star"> ${repo.stargazers_count}</i>`;
             infoContainer.appendChild(newRepo);
           }
