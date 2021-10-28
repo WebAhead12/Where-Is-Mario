@@ -14,13 +14,16 @@ const descriptionText = document.querySelector(".weatherDescription");
 
 let fahrenheitPreference = window.localStorage.getItem("weatherPreference")=="true" || false;
 
+//Updates the weather using geolocation of user and fetches the data from weatherApi
 function updateWeather(){
   if (navigator.geolocation) {
   
+    // gets user geolocation
     navigator.geolocation.getCurrentPosition(function (pos) {
       geoLon = String(pos.coords.longitude.toFixed(5));
       geoLat = String(pos.coords.latitude.toFixed(5));
   
+      // fetches the data from the api
       let url = `https://api.weatherapi.com/v1/current.json?key=${api_key}&q=${geoLat},${geoLon}&aqi=no`;
       fetch(url)
         .then((response) => {
@@ -28,6 +31,7 @@ function updateWeather(){
           return response.json();
         })
         .then((weatherData) => {
+          //updates the weather widget using api info
           C = weatherData.current.temp_c;
           F = weatherData.current.temp_f;
           if(fahrenheitPreference)
@@ -43,6 +47,7 @@ function updateWeather(){
 }
 updateWeather()
 container.addEventListener("click", (event)=>{
+  // Switches the weather mode from true to false and vice versa
   fahrenheitPreference = !fahrenheitPreference;
   window.localStorage.setItem("weatherPreference", fahrenheitPreference);
   if(fahrenheitPreference)
