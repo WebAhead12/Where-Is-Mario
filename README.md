@@ -14,7 +14,8 @@ The ability to look up someone's github account info<br>
 --Creation and last edited dates.<br>
 --Stars.<br><br>
 
-The website also shows the user current local weather (Changes between celsius and fahrenheit).<br>
+The website also shows the user current local weather 
+-Change between celsius and fahrenheit on click. <br>
 
 
 # Work Distribution
